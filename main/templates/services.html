@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Services</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+<nav>
+    <h3>Shirish portfolio.</h3>
+    <div>
+        <a href="/">Home</a>
+        <a href="{% url 'about' %}">About</a>
+        <a href="{% url 'projects' %}">Projects</a>
+        <a href="{% url 'services' %}">Services</a>
+        <a href="{% url 'contact' %}">Contact</a>
+    </div>
+</nav>
+
+<div class="container">
+
+    <!-- Services Section -->
+    <div class="services-container">
+
+        <div class="service-card">
+            <h2>Web Development</h2>
+            <p>I build responsive and modern websites using HTML, CSS, JavaScript, and Django.</p>
+        </div>
+
+        <div class="service-card">
+            <h2>Python Development</h2>
+            <p>Developing backend systems, automation scripts, and scalable applications using Python.</p>
+        </div>
+
+        <div class="service-card">
+            <h2>Data Analysis</h2>
+            <p>Analyzing data using SQL, Power BI, and Python to generate meaningful insights.</p>
+        </div>
+
+        <div class="service-card">
+            <h2>AI & Machine Learning</h2>
+            <p>Building intelligent solutions using AI, Machine Learning, and Deep Learning techniques.</p>
+        </div>
+
+        <div class="service-card">
+            <h2>SQL Development</h2>
+            <p>Designing and managing databases, writing optimized queries, and handling data efficiently using SQL.</p>
+        </div>
+
+        <div class="service-card">
+            <h2>Generative AI</h2>
+            <p>Building AI-powered applications using Generative AI, including chatbots, content generation, and intelligent automation.</p>
+        </div>
+
+    </div>
+
+</div>
+<footer class="footer">
+    © 2026 Shirish Somase | All Rights Reserved
+</footer>
+
+</body>
+</html>

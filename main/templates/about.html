@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>About</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+<nav>
+    <h3>Shirish portfolio.</h3>
+    <div>
+        <a href="/">Home</a>
+        <a href="{% url 'about' %}">About</a>
+        <a href="{% url 'projects' %}">Projects</a>
+        <a href="{% url 'services' %}">Services</a>
+        <a href="{% url 'contact' %}">Contact</a>
+    </div>
+</nav>
+
+<div class="container about-container">
+
+    <!-- LEFT SIDE IMAGE -->
+    <div class="about-image">
+        <img src="{% static 'images/about_profile.png' %}" alt="profile">
+    </div>
+
+    <!-- RIGHT SIDE CONTENT -->
+    <div class="about-content">
+
+        <h1>About Me</h1>
+        <p>
+            I am <b>Shirish Balaji Somase</b>, a passionate developer skilled in 
+            Frontend Development, Data Analysis, and  Proficient in Python, SQL with hands-on experience in software project 
+        development and data analysis. Skilled in using Power BI for data visualization and insights, 
+        along with a growing interest in Artificial Intelligence and Machine Learning.
+        </p>
+
+        <!-- SKILLS -->
+        <h2>Skills</h2>
+        <div class="skills">
+            <span>Python</span>
+            <span>SQL</span>
+            <span>Django</span>
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>Machine Learning</span>
+            
+            
+        </div>
+
+        <!-- EDUCATION -->
+        <div class="education-section">
+
+        <h2>Education</h2>
+
+        <div class="edu-card">
+            <h3>Master of Computer Application (2024-2026)</h3>
+            <p>Dr D Y Patil institute Of Master Of Computer Appliation And Management , Akurdi , Pune</p>
+        </div>
+
+        <div class="edu-card">
+            <h3>Bachelor of Computer Applications (2021-2024)</h3>
+            <p>B P Sulakhe Commerce College, Barshi</p>
+        </div>
+
+        <div class="edu-card">
+            <h3>HSC (Science-2021)</h3>
+            <p>Vidya prathishtan's Art Science Commerce College, Baramati</p>
+        </div>
+
+        <div class="edu-card">
+            <h3>SSC (Science-2019)</h3>
+            <p>Adv. Diliprao Sopal Highschool, Surdi</p>
+        </div>
+
+</div>
+
+    </div>
+
+</div>
+<footer class="footer">
+    © 2026 Shirish Somase | All Rights Reserved
+</footer>
+
+</body>
+</html>

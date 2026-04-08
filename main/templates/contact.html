@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Contact</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+<nav>
+    <h3>Shirish portfolio.</h3>
+    <div>
+        <a href="/">Home</a>
+        <a href="{% url 'about' %}">About</a>
+        <a href="{% url 'projects' %}">Projects</a>
+        <a href="{% url 'services' %}">Services</a>
+        <a href="{% url 'contact' %}">Contact</a>
+    </div>
+</nav>
+    <!-- Contact Section -->
+    <div class="contact-container">
+
+        <!-- Left Info -->
+        <div class="contact-info">
+            <h2>Get in Touch</h2>
+            <p>Email: shirishsomase@gmail.com</p>
+            <p>Phone: +91 8759437007</p>
+            <p>Location: Pune,Maharashtra, India</p>
+        </div>
+
+        <!-- Contact Form -->
+        <form method="POST" class="contact-form">
+        {% csrf_token %}
+
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+
+        <button type="submit" class="btn">Send Message</button>
+        </form>
+
+        <!-- Success Message -->
+        {% if success %}
+        <p style="color: lightgreen;">Message sent successfully!</p>
+        {% endif %}
+
+    </div>
+
+</div>
+<footer class="footer">
+    © 2026 Shirish Somase | All Rights Reserved
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Portfolio</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<nav>
+    <h3>Shirish portfolio.</h3>
+    <div>
+        <a href="#">Home</a>
+        <a href="/about/">About</a>
+        <a href="{% url 'projects' %}">Projects</a>
+        <a href="{% url 'services' %}">Services</a>
+        <a href="{% url 'contact' %}">Contact</a>
+    </div>
+</nav>
+
+<div class="container">
+    
+    <div class="text">
+        <h1>Shirish Balaji Somase</h1>
+        <h2>
+           <span id="typing"></span>
+        </h2>
+        <p>From Akurdi Pune</p>
+
+        <!-- Button + Icons -->
+        <div class="actions">
+
+            <a href="{% static 'files/cv.pdf' %}" download>
+                <button class="btn">Download CV</button>
+            </a>
+
+            <div class="icons">
+                <a href="https://github.com/shirishsomase" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/shirish-somase/" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+
+                <a href="https://x.com/ShirishSomase" target="_blank">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="image">
+        <img src="{% static 'images/profile.png' %}" alt="profile">
+    </div>
+
+</div>
+<footer class="footer">
+    © 2026 Shirish Somase | All Rights Reserved
+</footer>
+
+</body>
+</html>
+
+<script>
+    const roles = [
+        "Software Developer.. ",
+        "Python Developer.. ",
+        "Data Analyst.. ",
+        "SQL Developer.. "
+    ];
+
+    let i = 0;
+    let j = 0;
+    let currentRole = "";
+    let isDeleting = false;
+
+    function typeEffect() {
+        currentRole = roles[i];
+
+        if (isDeleting) {
+            document.getElementById("typing").textContent = currentRole.substring(0, j--);
+        } else {
+            document.getElementById("typing").textContent = currentRole.substring(0, j++);
+        }
+
+        if (!isDeleting && j === currentRole.length) {
+            isDeleting = true;
+            setTimeout(typeEffect, 1000);
+            return;
+        }
+
+        if (isDeleting && j === 0) {
+            isDeleting = false;
+            i = (i + 1) % roles.length;
+        }
+
+        setTimeout(typeEffect, isDeleting ? 50 : 100);
+    }
+
+    typeEffect();
+</script>
