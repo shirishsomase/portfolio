@@ -20,14 +20,11 @@ def contact(request):
         email = request.POST.get('email')
         message = request.POST.get('message')
 
-        full_message = f"Name: {name}\nEmail: {email}\nMessage: {message}"
-
-        send_mail(
-            subject="New Contact Message",
-            message=full_message,
-            from_email=email,
-            recipient_list=['shirishsomase@gmail.com'],
-        )
+        # Just print (for testing)
+        print("New Contact Message")
+        print("Name:", name)
+        print("Email:", email)
+        print("Message:", message)
 
         return render(request, 'contact.html', {'success': True})
 
